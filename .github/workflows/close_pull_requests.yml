@@ -10,6 +10,7 @@ jobs:
     steps:
       - uses: actions/github-script@v5
         with:
+          repo_token: ${{ secrets.BOT_TOKEN }}
           script: |
             await github.rest.issues.createComment({
               issue_number: context.issue.number,
